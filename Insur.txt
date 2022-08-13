@@ -1,0 +1,49 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+
+
+"""
+Created on Tue Aug 24 01:26:02 2021
+
+@author: Advance
+"""
+
+#! Python 3
+# This is a program made for a fictional car insurance company,on how they calculate their yearly insurance
+
+
+gender = input("Please are you a male or female,enter M for Male or F for Female ") # Insurance user is asked to input their gender
+gender = gender.upper()
+if gender == "M":
+    print("Male")
+    age = input("What is your age ")
+    age = int(age)
+    if age > 26:                                     # If age of user is greater than 26 his annual insurance is calculated 
+        print("greater than 26 ")                    # based on a fixed percentage
+        percentage = 9
+    else:                                        # Else if he is 26 or less his annual insurance is also calculated differently
+        print("less/equal to 26 ")
+        percentage = 23
+
+elif gender == "F":                               # Else if user is a female she is asked what car she uses
+    print("Female")
+    car_type = input("what car do you use ")
+    car_type = car_type.capitalize()
+    if car_type == "Sports":
+        print("Sports car ")
+        percentage = 21
+    else:
+        print("Non-Sports car ")
+        percentage = 10
+else:
+    print("wrong format")
+    
+market_price = input("what is the market price of your car? ")
+market_price = int(market_price)
+yeearly_insurance = (percentage/100 * market_price )
+
+print(f"your yearly insurance is {yeearly_insurance} ")
+
+input("press ENTER to exit")
+
